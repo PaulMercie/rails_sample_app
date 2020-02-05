@@ -3,5 +3,6 @@
 <ul>
     <%- @products.each do |product| %>
         <li><%= product.title %></li>
+        <a><%= link_to 'Show', product %></a>
     <% end %>
 <ul>
