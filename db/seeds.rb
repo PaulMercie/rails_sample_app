@@ -1,4 +1,4 @@
 # Articles
 99.times do |n|
-  Product.create(title: "Lorem #{n}", description: "lorem ipsum ...", price: rand(5))
+  Product.create(title: "Produit #{n}", description: "Lorem", price: rand(50))
 end
