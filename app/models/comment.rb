@@ -1,5 +1,5 @@
 class Comment < ApplicationRecord
-    validates :body, presence: true
-
+    scope :visible, -> { where(visible: true) }
+    validates :body, :product_id, presence: true
     belongs_to :product
 end

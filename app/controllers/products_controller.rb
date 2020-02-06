@@ -1,17 +1,16 @@
 class ProductsController < ApplicationController
+  def index
+    @products = Product.visible
+  end
 
-    def index
-        @products = Product.all.limit(10)
-    end
+  def new
+  end
 
-    def new
-    end
+  def create
+  end
 
-    def create
-    end
-
-    def show
-        @product = Product.find(params[:id])
-        @comments = @product.comments
-    end
+  def show
+    @product = Product.find(params[:id])
+    @comments = @product.comments.visible
+  end
 end

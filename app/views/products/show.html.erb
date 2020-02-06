@@ -1,8 +1,18 @@
-<h1><%= @product.title %></h1>
-<br>
-<%= @product.description %>
-<br>
-<p><%= @product.price %>€</p>
-<div></div>
+<p id="notice"><%= notice %></p>
 
-<p>Find me in app/views/products/show.html.erb</p>
+<p>
+  <strong>Name:</strong>
+  <%= @product.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @product.description %>
+</p>
+
+<% @comments.each do |comment| %>
+    <p><%= "#{comment.body}" %></p>
+<% end %>
+
+<%= link_to 'New Comment', new_product_comment_path(@product.id) %> |
+<%= link_to 'Back', products_path %>
